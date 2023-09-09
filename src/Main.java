@@ -11,9 +11,7 @@ public class Main {
         } else {
             tempText.append(" -  папка Games не создана или уже существует\n");
         }
-
-        System.out.println(tempText);
-
+        
         File dirSrc = new File(dirGames, "src");
         File dirRes = new File(dirGames, "res");
         File dirSavegames = new File(dirGames, "savegames");
@@ -25,8 +23,6 @@ public class Main {
             tempText.append(" - В папке Games не все созданы папки или они уже существуют\n");
         }
 
-        System.out.println(tempText);
-
         File dirMain = new File(dirSrc, "main");
         File dirTest = new File(dirSrc, "test");
         if (dirMain.mkdir() && dirTest.mkdir()) {
@@ -34,8 +30,6 @@ public class Main {
         } else {
             tempText.append(" - В папке src не все созданы папки или уже существуют\n");
         }
-
-        System.out.println(tempText);
 
         File fileMain = new File(dirMain, "Main.java");
         File fileUtils = new File(dirMain, "Utils.java");
@@ -49,8 +43,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(tempText);
-
         File fileTemp = new File(dirTemp, "temp.txt");
         try {
             if (fileTemp.createNewFile()) {
@@ -61,8 +53,6 @@ public class Main {
         } catch (IOException e) {
             System.out.println("1 " + e.getMessage());
         }
-
-        System.out.println(tempText);
 
         File dirDrawables = new File(dirRes, "drawables");
         File dirIcons = new File(dirRes, "icons");
@@ -81,6 +71,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println("2" + e.getMessage());
         }
-        System.out.println(tempText);
     }
 }
